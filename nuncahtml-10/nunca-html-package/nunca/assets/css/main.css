@@ -10183,3 +10183,16 @@ START: Footer CSS
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+
+li.hover {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+li.hover:hover {
+  transform: scale(1.2); /* Aumenta el tamaño del texto */
+  color: red; /* Cambia el color del texto a rojo */
+}
