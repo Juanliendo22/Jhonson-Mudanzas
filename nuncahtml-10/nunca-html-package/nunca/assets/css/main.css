@@ -5536,7 +5536,7 @@ START: Theme Slider CSS
   }
 }
 .service-card-wrap .service-card .icon {
-  background-color: var(--rr-color-common-white);
+  background-color: var(--rr-color-common-black);
   height: 88px;
   width: 88px;
   display: flex;
@@ -10201,7 +10201,11 @@ li.hover:hover {
 
 #texto-blanco {
   color: white;
-}.icon i {
-  color: white; /* Cambia el color del icono a blanco */
+}
+
+
+.icon i {
+  color: rgb(255, 251, 251); /* Cambia el color del icono a blanco */
   font-size: 2rem; /* Ajusta el tamaño si lo necesitas */
 }
+
