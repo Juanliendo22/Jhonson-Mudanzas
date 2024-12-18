@@ -533,7 +533,7 @@ ul {
   display: inline-block;
   white-space: nowrap;
   font-size: 36px;
-  color: var(--rr-color-heading-primary);
+  color: var(--rr-color-common-white);
   text-transform: capitalize;
   font-weight: 600;
   position: relative;
@@ -7862,7 +7862,7 @@ START: Theme Slider CSS
 }
 .faq-accordion .accordion-item .accordion-button:after {
   background-color: var(--rr-color-theme-primary);
-  color: var(--rr-color-heading-primary);
+  color: var(--rr-color-common-white);
   background-image: none;
   font-family: "Font Awesome 6 Pro";
   font-size: 15px;
@@ -10199,3 +10199,9 @@ li.hover:hover {
 
 
 
+#texto-blanco {
+  color: white;
+}.icon i {
+  color: white; /* Cambia el color del icono a blanco */
+  font-size: 2rem; /* Ajusta el tamaño si lo necesitas */
+}
