@@ -2766,19 +2766,22 @@ START: Header CSS
 }
 @media (max-width: 1399px) {
   .header .primary-header-inner .header-logo img {
-    max-width: 150px;
+    max-width: 120px; /* Reducido de 150px a 120px */
   }
 }
+
 @media only screen and (max-width: 992px) {
   .header .primary-header-inner .header-logo img {
-    max-width: 200px;
+    max-width: 100px; /* Reducido de 200px a 100px */
   }
 }
+
 @media only screen and (max-width: 767px) {
   .header .primary-header-inner .header-logo img {
-    max-width: 150px;
+    max-width: 80px; /* Reducido de 150px a 80px */
   }
 }
+
 .header .primary-header-inner .header-menu-wrap {
   display: flex !important;
   align-items: center;
