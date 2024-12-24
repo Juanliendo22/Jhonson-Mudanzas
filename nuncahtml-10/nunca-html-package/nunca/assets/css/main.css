@@ -2627,48 +2627,43 @@ ul {
   font-weight: 700;
   line-height: 1;
   padding: 20px 40px;
+  margin:30px;
   border-radius: 100px;
-  transition: all 0.5s ease-in-out;
   overflow: hidden;
   text-transform: uppercase;
   position: relative;
   z-index: 1;
   border: 2px solid var(--rr-color-heading-primary);
 }
-.rr-primary-btn:after, .rr-primary-btn:before {
+
+.rr-primary-btn:after, 
+.rr-primary-btn:before {
   background-color: var(--rr-color-heading-primary);
   content: "";
   display: block;
   height: 100%;
   width: 100%;
   transform: skew(90deg) translate(-50%, -50%);
-  transition: all 0.5s ease-in-out;
   position: absolute;
   inset: 50%;
   left: 25%;
   z-index: -1;
 }
+
 .rr-primary-btn:before {
   top: -50%;
   left: -25%;
   transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
 }
+
 .rr-primary-btn:hover {
   color: var(--rr-color-common-white);
+  transform: scale(1.1); /* Efecto de aumento */
 }
-.rr-primary-btn:hover:before {
-  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-}
-.rr-primary-btn:hover:after {
-  transform: skew(45deg) translate(-50%, -50%);
-}
+
 .rr-primary-btn i {
   margin-left: 10px;
   font-size: 16px;
-  transition: all 0.3s ease-in-out;
-}
-.rr-primary-btn:focus {
-  color: var(--rr-color-heading-primary);
 }
 
 .rr-white-btn {
@@ -2837,7 +2832,8 @@ START: Header CSS
 }
 .header .primary-header-inner .header-menu-wrap ul li ul {
   background-color: var(--rr-color-common-white);
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 220px;
   padding: 0;
   -webkit-box-shadow: 0px 50px 100px 0px rgba(64, 1, 4, 0.1), 0px -6px 0px 0px rgba(248, 99, 107, 0.004);
@@ -2894,6 +2890,7 @@ START: Header CSS
   -webkit-font-smoothing: antialiased;
   margin: 0;
   position: relative;
+  margin: 2px;
 }
 .header .primary-header-inner .header-menu-wrap ul li li a:hover {
   color: var(--rr-color-heading-primary);
@@ -10212,3 +10209,26 @@ li.hover:hover {
   font-size: 2rem; /* Ajusta el tamaño si lo necesitas */
 }
 
+
+
+.botonCta{
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.slider-btn.btn-whatsapp {
+  color: white;
+  transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+.slider-btn.btn-whatsapp:hover {
+  color: var(--rr-color-common-white);
+  transform: scale(1.1); /* Efecto de aumento */
+}
+.tamañoLetra{
+  font-size: 1rem;
+}

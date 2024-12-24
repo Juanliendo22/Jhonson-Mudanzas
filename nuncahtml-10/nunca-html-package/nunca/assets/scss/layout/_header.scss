@@ -64,6 +64,7 @@ START: Header CSS
                     display: inline-block;
                     position: relative;
                     margin: 0 15px;
+                    
                     @include breakpoint(xl){
                         margin: 0 15px;
                     }
