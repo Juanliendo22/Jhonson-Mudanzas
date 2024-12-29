@@ -7745,7 +7745,7 @@ START: Theme Slider CSS
   border-bottom: 3px solid var(--rr-color-heading-primary);
 }
 .faq-section:before {
-  background-color: var(--rr-color-theme-primary);
+  background-color: white;
   content: "";
   width: 45%;
   height: 100%;
