@@ -4823,8 +4823,8 @@ START: Theme Slider CSS
 
 .about-img {
   height: 650px;
-  border-radius: 60px;
-  border: 3px solid var(--rr-color-heading-primary);
+  border-radius: 1rem;
+  border: 2px solid var(--rr-color-heading-primary);
 }
 @media only screen and (max-width: 767px) {
   .about-img {
