@@ -252,28 +252,67 @@
                                     <div class="request-form">
                                         <form action="mail.php" method="post" id="ajax_contact" class="form-horizontal">
                                             <div class="form-group row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-6">
                                                     <div class="form-item">
                                                         <h4 class="form-title">Nombre Completo*</h4>
-                                                        <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Nombre Completo">
+                                                        <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Ej: Juan Pérez" required>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-item">
+                                                        <h4 class="form-title">Teléfono*</h4>
+                                                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Ej: +56 1234-5678" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <div class="col-md-12">
                                                     <div class="form-item">
                                                         <h4 class="form-title">Correo Electrónico*</h4>
-                                                        <input type="email" id="email" name="email" class="form-control" placeholder="Correo Electrónico">
+                                                        <input type="email" id="email" name="email" class="form-control" placeholder="Ej: juanperez@email.com" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-6">
+                                                    <div class="form-item">
+                                                        <h4 class="form-title">Lugar de Origen*</h4>
+                                                        <input type="text" id="origin" name="origin" class="form-control" placeholder="Dirección de origen" required>
+                                                        <div>
+                                                            <label>
+                                                                <input type="checkbox" name="originType" value="Casa" checked> Casa
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="originType" value="Edificio"> Edificio
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-item">
+                                                        <h4 class="form-title">Lugar de Destino*</h4>
+                                                        <input type="text" id="destination" name="destination" class="form-control" placeholder="Dirección de destino" required>
+                                                        <div>
+                                                            <label>
+                                                                <input type="checkbox" name="destinationType" value="Casa" checked> Casa
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="destinationType" value="Edificio"> Edificio
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-md-12">
                                                     <div class="form-item message-item">
-                                                        <textarea id="message" name="message" cols="30" rows="5" class="form-control address" placeholder="Escribe tu mensaje aquí*"></textarea>
+                                                        <h4 class="form-title">Detalles Adicionales*</h4>
+                                                        <textarea id="message" name="message" cols="30" rows="5" class="form-control address" placeholder="Describe tus necesidades: tamaño de la mudanza, objetos delicados, etc." required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="slider-btn-wrap" data-animation="nunca-fadeInUp" data-delay="1600ms" data-duration="1800ms">
-                                                <button type="button" id="sendWhatsApp" style="background-color: green;" class="rr-primary-btn slider-btn btn-whatsapp">cotización instantánea!</button>
+                                                <button type="button" id="sendWhatsApp" style="background-color: green;" class="rr-primary-btn slider-btn btn-whatsapp">Cotización instantánea!</button>
                                             </div>
                                         </form>
                                     </div>
@@ -281,17 +320,31 @@
                             </div>
                             
                             <script>
-                            document.getElementById('sendWhatsApp').addEventListener('click', function() {
-                                const fullname = document.getElementById('fullname').value;
-                                const email = document.getElementById('email').value;
-                                const message = document.getElementById('message').value;
-                                const phoneNumber = '50767351212'; // Número de WhatsApp
+                                document.getElementById('sendWhatsApp').addEventListener('click', function() {
+                                    const fullname = document.getElementById('fullname').value;
+                                    const phone = document.getElementById('phone').value;
+                                    const email = document.getElementById('email').value;
+                                    const origin = document.getElementById('origin').value;
+                                    const originType = document.querySelector('input[name="originType"]:checked').value;
+                                    const destination = document.getElementById('destination').value;
+                                    const destinationType = document.querySelector('input[name="destinationType"]:checked').value;
+                                    const message = document.getElementById('message').value;
                             
-                                const url = `https://wa.me/${phoneNumber}?text=Nombre%3A%20${fullname}%0AEmail%3A%20${email}%0AMensaje%3A%20${encodeURIComponent(message)}`;
+                                    const whatsappMessage = `Hola, me gustaría cotizar un servicio. 
+                            Nombre y Apellido: ${fullname}
+                            Teléfono: ${phone}
+                            Correo Electrónico: ${email}
+                            Lugar de origen: ${origin} (${originType})
+                            Lugar de destino: ${destination} (${destinationType})
+                            Detalles adicionales: ${message}`;
                             
-                                window.open(url, '_blank');
-                            });
+                                    const phoneNumber = '50767351212'; // Número de WhatsApp
+                                    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                            
+                                    window.open(url, '_blank');
+                                });
                             </script>
+                            
                             
                         </div>
                     </div>
